@@ -5,6 +5,8 @@ pipeline {
         NODE_ENV = 'production'
         RENDER_SERVICE_URL = 'https://your-app-name.onrender.com'
         BUILD_ID = "${env.BUILD_ID}"
+        NOTIFICATION_EMAIL = 'your-email@example.com'
+        SLACK_CHANNEL = '#YourFirstName_IP1'
     }
     
     stages {
@@ -33,7 +35,7 @@ pipeline {
                         
                         Tests have failed. Please check the code and fix the issues.
                         """,
-                        to: "your-email@example.com"
+                        to: "${env.NOTIFICATION_EMAIL}"
                     )
                 }
             }
@@ -49,7 +51,7 @@ pipeline {
             post {
                 success {
                     slackSend (
-                        channel: '#YourFirstName_IP1',
+                        channel: "${env.SLACK_CHANNEL}",
                         color: 'good',
                         message: """
                         ✅ Deployment Successful!
