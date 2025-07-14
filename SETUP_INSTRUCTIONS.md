@@ -29,10 +29,12 @@
 4. Click "Confirm"
 
 ### Step 5: Get Connection String
-1. Go to "Clusters" and click "Connect"
+1. Go to "Clusters" and click "Connect" on your "MoringaIP1-copy" cluster
 2. Choose "Connect your application"
-3. Copy the connection string
-4. Replace `<USERNAME>` and `<PASSWORD>` in `_config.js`
+3. Copy the connection string (should look like: `mongodb+srv://<username>:<password>@moringaip1-copy.mongodb.net/`)
+4. Replace `<USERNAME>` and `<PASSWORD>` in `_config.js` with your actual credentials
+
+**Note**: The cluster connection string has been updated to use `moringaip1-copy.mongodb.net` based on your Terraform configuration.
 
 ## 2. Render Deployment Setup
 
